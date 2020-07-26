@@ -3,6 +3,7 @@ const cheerio = require('cheerio')
 const { DownloaderHelper } = require("node-downloader-helper")
 var FormData = require('form-data')
 const fs = require("fs")
+var HttpsProxyAgent = require('https-proxy-agent');
 
 async function source(proxy) {
     return new Promise((resolve, reject) => {
@@ -60,14 +61,14 @@ async function genticket(apiurl, apikey, proxy, ticket, useragent) {
                     body: formdata,
                     redirect: 'follow'
                 };
-                fetch("http://ec2-18-185-75-4.eu-central-1.compute.amazonaws.com:3000/upload", requestOptions)
+                fetch(apiurl, requestOptions)
                 .then(response => response.text())
                 .then(result => {
                     let resultinfo = JSON.parse(result)
                     if (resultinfo.status == false) {
                         reject(resultinfo.message)
                     } else if (resultinfo.status == true) {
-                        resolve(resultinfo.message)
+                        resolve(resultinfo.ticket[0])
                     } else {
                         reject(resultinfo.message)
                     }
@@ -80,4 +81,4 @@ async function genticket(apiurl, apikey, proxy, ticket, useragent) {
     })        
 }
 
-genticket(undefined, "3h5u3b5u3bu5iulqv5iuv", undefined, undefined, "undefined").then(result => console.log(result)).catch(err => console.log(err))
+genticket("http://ec2-18-185-75-4.eu-central-1.compute.amazonaws.com:3000/upload", "3h5u3b5u3bu5iulqv5iuv", undefined, undefined, "undefined").then(result => console.log(result)).catch(err => console.log(err))
