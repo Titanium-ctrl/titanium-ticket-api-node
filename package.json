@@ -1,6 +1,6 @@
 {
   "name": "titanium-ticket-api-node",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Easy Nodejs integration for the Titanium Robotics Ticket API",
   "main": "index.js",
   "dependencies": {

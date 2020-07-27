@@ -47,7 +47,7 @@ async function genticket(apiurl, apikey, proxy, ticket, useragent) {
             //download
             const dl = new DownloaderHelper(wasmbinsrc, './')
             dl.on('end', downloadInfo => {
-                console.log("Download completed: ", downloadInfo)
+                //console.log("Download completed: ", downloadInfo)
                 let filePath = downloadInfo.filePath
                 //resolve(filePath)
                 //Post to api here or below
