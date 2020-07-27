@@ -81,4 +81,4 @@ async function genticket(apiurl, apikey, proxy, ticket, useragent) {
     })        
 }
 
-genticket("http://ec2-18-185-75-4.eu-central-1.compute.amazonaws.com:3000/upload", "3h5u3b5u3bu5iulqv5iuv", undefined, undefined, "undefined").then(result => console.log(result)).catch(err => console.log(err))
+module.exports.genticket = genticket;
