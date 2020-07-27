@@ -75,7 +75,7 @@ async function genticket(apiurl, apikey, proxy, ticket, useragent) {
                 })
                 .catch(error => console.log('error', error));
             })
-            dl.on('error', err => console.error('Something happened', err))
+            dl.on('error', err => console.error('Download of wasm failed ', err))
             dl.start().catch(err => {console.log(err)})
         })
     })        
