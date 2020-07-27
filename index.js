@@ -54,6 +54,9 @@ async function genticket(apiurl, apikey, proxy, ticket, useragent) {
                 var formdata = new FormData();
                 formdata.append('wasm', fs.createReadStream(filePath))
                 formdata.append('useragent', useragent)
+                if (ticket != undefined) {
+                    formdata.append('ticket', ticket)
+                }
 
                 var requestOptions = {
                     method: 'POST',
