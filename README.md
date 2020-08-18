@@ -8,6 +8,10 @@ This npm package allows easy integration of the Titanium Robotics Ticket API int
 
 # Usage
 
+## Formatting
+All parameters of the genticket function should either be a string or undefined.
+Your proxy should be in the format: "http://username:password@ipAddress:port" or "http://ipAddress:port"
+
 ## Before ATC
 
 To generate a cookie that'll be used before atc, all you need to do is
