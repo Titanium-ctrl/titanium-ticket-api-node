@@ -1,7 +1,9 @@
 # titanium-ticket-api-node
 
 ## THIS PACKAGE IS IN NEED OF UPDATING BASED ON THE NEW SUPREME BP
+# This is no longer maintained - the code is here for me (and you probably) to view the code and possibly learn off it 🤷‍♂️
 
+# Intro
 This npm package allows easy integration of the Titanium Robotics Ticket API into your Nodejs program. You will be provided an API URL and API Key upon purchase. 
 
 
